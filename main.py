@@ -21,8 +21,8 @@ import requests
 import re
 import json
 requests.urllib3.disable_warnings()
-sudo = 1310488710 #خلي ايدي حسابك التلي 
-
+sudo = 6465225568 #خلي ايدي حسابك التلي 
+sudos = 1310488710 #خلي ايدي حسابك التلي 
 def id_file1(id):
  all = False
  file = open("users.txt","r")
@@ -34,7 +34,7 @@ def id_file1(id):
  
 ti=0
 users = []
-token = "6548563416:AAHIHOAcGZip14Bb0pH6WJCE1RUP0CcvR18"
+token = "6061529020:AAGASPE3_EeYCmh2K1t_LUVogAiDcNzmt60"
 print('- اذهب للبوت واضغط \n /start')
 bot = telebot.TeleBot(token) 
 def short(url):
@@ -44,7 +44,7 @@ def start(message):
    id = message.from_user.id
    with open('users.txt','a') as f3:
     f3.write(f'{id}\n')
-    channel = "M3bibot" # Your channel username without @
+    channel = "" # Your channel username without @
     
     a = message.from_user.first_name
     b = message.from_user.username
@@ -53,6 +53,12 @@ def start(message):
         users.append(id)
         stats = len(users)
         bot.send_message(sudo,"""-» قام شخص جديد بالدخول الى البوت الخاص بك 
+- -» اسمه : {}
+-» معرفه : @{}
+-» ايديه : {}
+➖ أصبح عدد مستخدمين البوت : ~ {}""".format(a,b,id,stats),disable_web_page_preview=True)
+
+        bot.send_message(sudos,"""-» قام شخص جديد بالدخول الى البوت الخاص بك 
 - -» اسمه : {}
 -» معرفه : @{}
 -» ايديه : {}
@@ -85,7 +91,7 @@ def ag(message):
 	try:
 		request = get(f"https://www.tikwm.com/api/?url={url}").json()
 		video = request["data"]["play"]
-		bot.send_video(message.chat.id,video,caption=" الـمـالـك: @A_U_S ")
+		bot.send_video(message.chat.id,video,caption=" الـمـالـك:  @A_U_S ")
 	except:
 		bot.send_message(message.chat.id,f"-  الرابط غير صالح ❌ . ")
 bot.infinity_polling()
