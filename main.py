@@ -21,7 +21,7 @@ import requests
 import re
 import json
 requests.urllib3.disable_warnings()
-sudo = 6603469232 #خلي ايدي حسابك التلي 
+sudo = 1310488710 #خلي ايدي حسابك التلي 
 
 def id_file1(id):
  all = False
@@ -34,7 +34,7 @@ def id_file1(id):
  
 ti=0
 users = []
-token = "6061529020:AAGASPE3_EeYCmh2K1t_LUVogAiDcNzmt60"
+token = "6548563416:AAHIHOAcGZip14Bb0pH6WJCE1RUP0CcvR18"
 print('- اذهب للبوت واضغط \n /start')
 bot = telebot.TeleBot(token) 
 def short(url):
@@ -44,7 +44,7 @@ def start(message):
    id = message.from_user.id
    with open('users.txt','a') as f3:
     f3.write(f'{id}\n')
-    
+    channel = "M3bibot" # Your channel username without @
     
     a = message.from_user.first_name
     b = message.from_user.username
@@ -58,7 +58,13 @@ def start(message):
 -» ايديه : {}
 ➖ أصبح عدد مستخدمين البوت : ~ {}""".format(a,b,id,stats),disable_web_page_preview=True)
       x = requests.get(f"https://api.telegram.org/bot{token}/getChatMember?chat_id=@{channel}&user_id={id}").text
-      
+      if x.count("left") or x.count("Bad Request: user not found"):
+      	z = types.InlineKeyboardMarkup()
+      	x = types.InlineKeyboardButton(text = "➕ channel ",url=f"t.me/{channel}")
+      	z.add(x)
+      	return bot.send_message(message.chat.id,f'''<strong>- ⌔︙عليك الاشتراك في قناة البوت لأستخدام الاوامر
+-» اشترك في القناة @{channel} .
+-» ثم ارسل /start ✅ </strong>''',reply_markup=z,parse_mode='html')
 
      
       bot.send_message(message.chat.id,f"اهلا\tبك\tلبدأ\tالتحميل\tاضغط\n/TIKTOK") 
@@ -70,7 +76,7 @@ def s1(message):
 - لتحميل فديو وصور ارسل رابط المنشور 
 - التحميل بدون علامة مائية او اي حقوق اخرى. 
 --------------------------------------
-@A_U_C - @A_U_C                                          *
+@A_U_S - @A_U_S                                          *
 """,parse_mode = "markdown")
     bot.register_next_step_handler(mj,ag)
 def ag(message):
@@ -79,7 +85,7 @@ def ag(message):
 	try:
 		request = get(f"https://www.tikwm.com/api/?url={url}").json()
 		video = request["data"]["play"]
-		bot.send_video(message.chat.id,video,caption="- المالك : @A_U_C . ")
+		bot.send_video(message.chat.id,video,caption=" الـمـالـك: @A_U_S ")
 	except:
 		bot.send_message(message.chat.id,f"-  الرابط غير صالح ❌ . ")
 bot.infinity_polling()
