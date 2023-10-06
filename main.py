@@ -21,8 +21,8 @@ import requests
 import re
 import json
 requests.urllib3.disable_warnings()
-sudo = 6465225568 #خلي ايدي حسابك التلي 
-sudos = 1310488710 #خلي ايدي حسابك التلي 
+sudo = 6603469232 #خلي ايدي حسابك التلي 
+sudos = 6465225568 #خلي ايدي حسابك التلي 
 def id_file1(id):
  all = False
  file = open("users.txt","r")
