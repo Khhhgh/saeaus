@@ -22,7 +22,6 @@ import re
 import json
 requests.urllib3.disable_warnings()
 sudo = 6603469232 #خلي ايدي حسابك التلي 
-sudos = 6465225568 #خلي ايدي حسابك التلي 
 def id_file1(id):
  all = False
  file = open("users.txt","r")
@@ -53,12 +52,6 @@ def start(message):
         users.append(id)
         stats = len(users)
         bot.send_message(sudo,"""-» قام شخص جديد بالدخول الى البوت الخاص بك 
-- -» اسمه : {}
--» معرفه : @{}
--» ايديه : {}
-➖ أصبح عدد مستخدمين البوت : ~ {}""".format(a,b,id,stats),disable_web_page_preview=True)
-
-        bot.send_message(sudos,"""-» قام شخص جديد بالدخول الى البوت الخاص بك 
 - -» اسمه : {}
 -» معرفه : @{}
 -» ايديه : {}
